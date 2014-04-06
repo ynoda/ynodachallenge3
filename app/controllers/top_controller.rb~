@@ -1,0 +1,6 @@
+class TopController < ApplicationController
+  def index
+      @energylog = Energylog.order(:id)
+      @houses = Housedata.order(:house)
+  end
+end

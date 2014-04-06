@@ -1,0 +1,4 @@
+class RenameDatasetToEnergyLog < ActiveRecord::Migration
+  def change
+  end
+end
