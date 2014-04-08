@@ -9,8 +9,11 @@ gem 'rails', '4.0.4'
 group :development do
   gem 'sqlite3'
 end
+#group :production do
+#  gem 'pg'
+#end
 group :production do
-  gem 'pg'
+ gem 'sqlite3'
 end
 
 # Use SCSS for stylesheets
