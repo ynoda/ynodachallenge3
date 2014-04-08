@@ -14,7 +14,7 @@ House.delete_all
 #Initialize auto_increment
 #House.connection.execute("delete from sqlite_sequence where name='houses'")
 #Insert data in housed_data_50_nocolumnname
-CSV.foreach('../../public/data/house_data_nocolumnname.csv') do |row|
+CSV.foreach('./public/data/house_data_nocolumnname.csv') do |row|
 	House.create(
 		:house => row[0],
 		:firstname => row[1],
@@ -30,7 +30,7 @@ Energylog.delete_all
 #Initialize auto_increment
 #Energylog.connection.execute("delete from sqlite_sequence where name='energylogs'")
 #Insert data in dataset_50_nocolumnname
-CSV.foreach('../../public/data/dataset_50_nocolumnname.csv') do |row|
+CSV.foreach('./public/data/dataset_50_nocolumnname.csv') do |row|
 	Energylog.create(
 		:id2 => row[0],
 		:label => row[1],
