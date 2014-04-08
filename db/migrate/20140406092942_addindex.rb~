@@ -1,4 +1,0 @@
-class Addindex < ActiveRecord::Migration
-  def change
-  end
-end

@@ -1,3 +1,0 @@
-class Energylog < ActiveRecord::Base
-      belogns_to :house
-end
