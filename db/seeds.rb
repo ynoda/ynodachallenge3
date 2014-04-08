@@ -10,12 +10,12 @@ require "csv"
 #coding utf-8
 
 #Delete all data
-Housedata.delete_all
+House.delete_all
 #Initialize auto_increment
-Housedata.connection.execute("delete from sqlite_sequence where name='housedata'")
+House.connection.execute("delete from sqlite_sequence where name='houses'")
 #Insert data in housed_data_50_nocolumnname
-CSV.foreach('../../data/house_data_nocolumnname.csv') do |row|
-	Housedata.create(
+CSV.foreach('../../public/data/house_data_nocolumnname.csv') do |row|
+	House.create(
 		:house => row[0],
 		:firstname => row[1],
 		:lastname => row[2],
@@ -26,15 +26,15 @@ CSV.foreach('../../data/house_data_nocolumnname.csv') do |row|
 end
 
 #Delete all data
-Dataset.delete_all
+Energylog.delete_all
 #Initialize auto_increment
-Dataset.connection.execute("delete from sqlite_sequence where name='datasets'")
+Energylog.connection.execute("delete from sqlite_sequence where name='energylogs'")
 #Insert data in dataset_50_nocolumnname
-CSV.foreach('../../data/dataset_50_nocolumnname.csv') do |row|
-	Dataset.create(
+CSV.foreach('../../public/data/dataset_50_nocolumnname.csv') do |row|
+	Energylog.create(
 		:id2 => row[0],
 		:label => row[1],
-		:house => row[2],
+		:house_id => row[2],
 		:year => row[3],
 		:month => row[4],
 		:templature => row[5],
