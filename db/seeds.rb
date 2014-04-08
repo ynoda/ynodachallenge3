@@ -14,7 +14,7 @@ House.delete_all
 #Initialize auto_increment - sqlite3
 #House.connection.execute("delete from sqlite_sequence where name='houses'")
 #Initialize auto_increment - Postgresql
-#House.connection.execute("ALTER SEQUENCE energylogs_id_seq RESTART WITH 0}")
+House.connection.execute("ALTER SEQUENCE energylogs_id_seq RESTART WITH 0")
 #Insert data in housed_data_50_nocolumnname
 CSV.foreach('./public/data/house_data_nocolumnname.csv') do |row|
 	House.create(
@@ -31,7 +31,7 @@ end
 Energylog.delete_all
 #Initialize auto_increment
 #Energylog.connection.execute("delete from sqlite_sequence where name='energylogs'")
-Energylog.connection.execute("ALTER SEQUENCE energylogs_id_seq RESTART WITH 0}")
+Energylog.connection.execute("ALTER SEQUENCE energylogs_id_seq RESTART WITH 0")
 #Insert data in dataset_50_nocolumnname
 CSV.foreach('./public/data/dataset_50_nocolumnname.csv') do |row|
 	Energylog.create(
