@@ -12,15 +12,15 @@ define([
 	"dojo/domReady!"
 ], function(Array, Xhr, Chart, Legend, Tooltip, Magnify, Theme){
 	   var deffered = Xhr("/service/getAvgEPByCity", {handleAs: "json"}).then(function(data){
-		   var chart = new Chart("chartaNode");
-		   chart.setTheme(Theme);
-                   chart.addPlot("default", {type: "StackedAreas", markers: true});
-                   chart.addAxis("x", {
+		   var chartA = new Chart("chartaNode");
+		   chartA.setTheme(Theme);
+                   chartA.addPlot("default", {type: "StackedAreas", markers: true});
+                   chartA.addAxis("x", {
 			   title: "Year - Month",
 			   titleOrientation: "away",
 			   labels: data[0].timelabels
 		   });
-                   chart.addAxis("y", {
+                   chartA.addAxis("y", {
 			   title: "Energy Production",
 			   min: 0,
 			   max: 3000,
@@ -29,12 +29,12 @@ define([
 			   fixUpper: "major"
 		   });
       		   Array.forEach(data, function(d){
-			   chart.addSeries(d.city, d.avgs);
+			   chartA.addSeries(d.city, d.avgs);
 		   });
-		   var tip = new Tooltip(chart, "default");                                                                                   
-		   var mag = new Magnify(chart,"default");
-		   chart.render();
-		   var legend = new Legend({ chart: chart }, "legenda");
+		   var tip = new Tooltip(chartA, "default");
+		   var mag = new Magnify(chartA,"default");
+		   chartA.render();
+		   var legend = new Legend({ chart: chartA }, "legenda");
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){

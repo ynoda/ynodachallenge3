@@ -18,7 +18,7 @@ class ServiceController < ApplicationController
   end
 
   def getAvgEPByCity
-	@result = []
+	@result = [1]
 	data = []
 	cities = House.all.group(:city).select(:city)
 	cities.each do |cityobj|
