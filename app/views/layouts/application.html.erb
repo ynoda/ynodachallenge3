@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/dojo/1.9.3/dojo/dojo.js",
-      "data-dojo-config" => "'parseOnLoad': false, 'async': true, 'tlmSiblingOfDojo': false,'modulePaths': {modules: '/js'}" %>
+      "data-dojo-config" => "'parseOnLoad': false, 'async': true, 'tlmSiblingOfDojo': false, 'packages': [{name: 'modules', location: '/js'}]" %>
   <style type="text/css">
     @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/claro/claro.css";
     @import "http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/dijit.css";
