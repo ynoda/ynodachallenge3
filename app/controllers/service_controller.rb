@@ -18,7 +18,7 @@ class ServiceController < ApplicationController
   end
 
   def getAvgEPByCity
-	@result = [1]
+	@result = []
 	data = []
 	cities = House.all.group(:city).select(:city)
 	cities.each do |cityobj|
@@ -45,5 +45,4 @@ class ServiceController < ApplicationController
 		select('houses.has_child, energylogs.templature as x, energylogs.energyproduction as y')
 	render :json => @result
   end
-
 end
