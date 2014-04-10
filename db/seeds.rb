@@ -14,7 +14,7 @@ House.delete_all
 #Initialize auto_increment - sqlite3
 #House.connection.execute("delete from sqlite_sequence where name='houses'")
 #Initialize auto_increment - Postgresql
-House.connection.execute("ALTER SEQUENCE houses._id_seq RESTART WITH 1")
+House.connection.execute("ALTER SEQUENCE houses_id_seq RESTART WITH 1")
 #Insert data in housed_data_50_nocolumnname
 CSV.foreach('./public/data/house_data_nocolumnname.csv') do |row|
 	House.create(
