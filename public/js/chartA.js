@@ -28,11 +28,11 @@ define([
 			   fixLower: "major",
 			   fixUpper: "major"
 		   });
+		   var before = chartA;
      		   Array.forEach(data, function(d){
-			   this.inherited(arguments);
 			   chartA.addSeries(d.city, d.avgs);
 		   });
-
+		   console.log(chartA === before);
 		   console.log(chartA);
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA,"default");
