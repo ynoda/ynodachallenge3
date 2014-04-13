@@ -30,8 +30,9 @@ define([
 		   });
 		   chartA.render();
       		   Array.forEach(data, function(d){
+			   console.log(d);
 			   chartA.addSeries(d.city, d.avgs);
-		   });
+		   }, this);
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA,"default");
 		   //chartA.render();
