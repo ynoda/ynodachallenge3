@@ -28,7 +28,7 @@ define([
 			   fixLower: "major",
 			   fixUpper: "major"
 		   });
-		   chartA.render();
+		   //chartA.render();
       		   Array.forEach(data, function(d){
 			   console.log(d);
 			   console.log(chartA);
@@ -36,8 +36,9 @@ define([
 		   }, this);
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA,"default");
-		   //chartA.render();
 		   var legend = new Legend({ chart: chartA }, "legenda");
+		   chartA.render();
+		   //var legend = new Legend({ chart: chartA }, "legenda");
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){
