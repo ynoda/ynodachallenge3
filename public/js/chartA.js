@@ -31,16 +31,13 @@ define([
      		   Array.forEach(data, function(d){
 			   this.inherited(arguments);
 			   chartA.addSeries(d.city, d.avgs);
-			   //return chartA;
-		   }, this);
+		   });
 
 		   console.log(chartA);
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA,"default");
 		   var legend = new Legend({ chart: chartA }, "legenda");
 		   chartA.render();
-		   //var legend = new Legend({ chart: chartA }, "legenda");
-		   chart.fullRender();
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){
