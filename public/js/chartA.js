@@ -29,7 +29,7 @@ define([
 			   fixUpper: "major"
 		   });
 		   var before = chartA;
-     		   Array.forEach(data, function(d){
+     		   var test = Array.forEach(data, function(d){
 			   chartA.addSeries(d.city, d.avgs);
 		   });
 		   console.log(chartA === before);
