@@ -29,8 +29,11 @@ define([
 			   fixUpper: "major"
 		   });
      		   Array.forEach(data, function(d){
-			   this.chartA.addSeries(d.city, d.avgs);
+			   this.inherited(arguments);
+			   chartA.addSeries(d.city, d.avgs);
+			   //return chartA;
 		   }, this);
+
 		   console.log(chartA);
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA,"default");
@@ -41,6 +44,6 @@ define([
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){
-                   console.log(evt);
+                   //console.log(evt);
 	   });
 });
