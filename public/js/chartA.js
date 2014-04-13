@@ -31,6 +31,7 @@ define([
 		   chartA.render();
       		   Array.forEach(data, function(d){
 			   console.log(d);
+			   console.log(chartA);
 			   chartA.addSeries(d.city, d.avgs);
 		   }, this);
 		   var tip = new Tooltip(chartA, "default");
