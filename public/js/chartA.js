@@ -30,12 +30,10 @@ define([
 		   });
 		   //chartA.render();
       		   Array.forEach(data, function(d){
-			   console.log(d);
-			   console.log(chartA);
 			   chartA.addSeries(d.city, d.avgs);
-		   }, this);
-		   var tip = new Tooltip(chartA, "default");
-		   var mag = new Magnify(chartA,"default");
+		   });
+		   //var tip = new Tooltip(chartA, "default");
+		   //var mag = new Magnify(chartA,"default");
 		   var legend = new Legend({ chart: chartA }, "legenda");
 		   chartA.render();
 		   //var legend = new Legend({ chart: chartA }, "legenda");
