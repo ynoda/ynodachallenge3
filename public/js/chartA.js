@@ -28,17 +28,17 @@ define([
 			   fixLower: "major",
 			   fixUpper: "major"
 		   });
+		   chartA.render();
       		   Array.forEach(data, function(d){
 			   chartA.addSeries(d.city, d.avgs);
 		   });
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA,"default");
-		   chartA.render();
+		   //chartA.render();
 		   var legend = new Legend({ chart: chartA }, "legenda");
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){
                    console.log(evt);
 	   });
-
 });
