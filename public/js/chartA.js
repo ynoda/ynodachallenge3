@@ -40,6 +40,7 @@ define([
 		   var legend = new Legend({ chart: chartA }, "legenda");
 		   chartA.render();
 		   //var legend = new Legend({ chart: chartA }, "legenda");
+		   chart.fullRender();
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){
