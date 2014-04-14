@@ -34,10 +34,12 @@ define([
 		   var legend = new Legend({ chart: chartA }, "legenda");
 		   Array.forEach(data, function(d, i){
 				chartA.addSeries(d.city, d.avgs);
-				console.log(data.length);
+				console.log("d.city: " + d.city);
+				console.log("d.avgs: " + d.avgs);
 				console.log(i);
 				if(data.length == i + 1){
-				   chartA.render();
+					console.log(chartA);
+					chartA.render();
 				}
 		   });
 	   }, function(err){
