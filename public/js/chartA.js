@@ -10,7 +10,7 @@ require([
 	"dojox/charting/plot2d/Markers",
 	"dojox/charting/axis2d/Default",
 	"dojo/domReady!"
-], function(Array, Xhr, Chart, Legend, Tooltip, Magnify, Theme){
+], function(Array, Xhr, Chart, Legend, Tooltip, Magnify, Theme, StackedAreas, Markers, Default){
 	   var deffered = Xhr("/service/getAvgEPByCity", {handleAs: "json"}).then(function(data){
 		   var chartA = new Chart("chartaNode");
 		   chartA.setTheme(Theme);
@@ -33,11 +33,7 @@ require([
 		   var legend = new Legend({ chart: chartA }, "legenda");
 		   Array.forEach(data, function(d, i){
 				chartA.addSeries(d.city, d.avgs);
-				console.log("d.city: " + d.city);
-				console.log("d.avgs: " + d.avgs);
-				console.log(i);
 				if(data.length == i + 1){
-					console.log(chartA);
 					chartA.render();
 				}
 		   });
