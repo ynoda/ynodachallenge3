@@ -29,15 +29,15 @@ define([
 			   fixUpper: "major"
 		   });
 		   var before = chartA;
-     		   Array.forEach(data, function(d){
-			   this.inherited(arguments);
-			   chartA.addSeries(d.city, d.avgs);
-		   }, chartA);
-		   console.log(chartA === before);
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA,"default");
 		   var legend = new Legend({ chart: chartA }, "legenda");
-		   chartA.render();
+		   Array.forEach(data, function(d, i){
+				chartA.addSeries(d.city, d.avgs);
+				if(data.length == i){
+				   chartA.render();
+				}
+		   });
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){
