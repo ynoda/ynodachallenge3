@@ -35,6 +35,7 @@ define([
 		   Array.forEach(data, function(d, i){
 				chartA.addSeries(d.city, d.avgs);
 				console.log(data.length);
+				console.log(i);
 				if(data.length == i){
 				   chartA.render();
 				}
