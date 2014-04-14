@@ -1,4 +1,4 @@
-define([
+require([
 	"dojo/_base/array",
 	"dojo/request/xhr",
 	"dojox/charting/Chart",
@@ -14,8 +14,8 @@ define([
 	   var deffered = Xhr("/service/getAvgEPByCity", {handleAs: "json"}).then(function(data){
 		   var chartA = new Chart("chartaNode");
 		   chartA.setTheme(Theme);
-                   chartA.addPlot("default", {type: "StackedAreas", markers: true});
-                   chartA.addAxis("x", {
+           chartA.addPlot("default", {type: "StackedAreas", markers: true});
+           chartA.addAxis("x", {
 			   title: "Year - Month",
 			   titleOrientation: "away",
 			   labels: data[0].timelabels
@@ -28,7 +28,6 @@ define([
 			   fixLower: "major",
 			   fixUpper: "major"
 		   });
-		   var before = chartA;
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA,"default");
 		   var legend = new Legend({ chart: chartA }, "legenda");
