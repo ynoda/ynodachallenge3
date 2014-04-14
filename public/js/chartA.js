@@ -36,7 +36,7 @@ define([
 				chartA.addSeries(d.city, d.avgs);
 				console.log(data.length);
 				console.log(i);
-				if(data.length == i){
+				if(data.length == i - 1){
 				   chartA.render();
 				}
 		   });
