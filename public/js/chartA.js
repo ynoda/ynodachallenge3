@@ -20,7 +20,7 @@ define([
 			   titleOrientation: "away",
 			   labels: data[0].timelabels
 		   });
-                   chartA.addAxis("y", {
+           chartA.addAxis("y", {
 			   title: "Energy Production",
 			   min: 0,
 			   max: 3000,
@@ -34,6 +34,7 @@ define([
 		   var legend = new Legend({ chart: chartA }, "legenda");
 		   Array.forEach(data, function(d, i){
 				chartA.addSeries(d.city, d.avgs);
+				console.log(data.length);
 				if(data.length == i){
 				   chartA.render();
 				}
