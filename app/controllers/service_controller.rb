@@ -31,7 +31,7 @@ class ServiceController < ApplicationController
 	      	      select('energylogs.year, energylogs.month, avg(energyproduction) as average').
 		      where('houses.city = ?', cityobj.city)
 		energyavgs.each do |d|
-		      avgarg.push(d.average.to_i)
+		      avgarg.push(d.average.to_f)
 		      timelabels.push({"value" => i, "text" => d.year.to_s + "-" + d.month.to_s})
 		      i += 1
 		end

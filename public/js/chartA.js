@@ -28,10 +28,6 @@ require([
 			   fixLower: "major",
 			   fixUpper: "major"
 		   });
-
-		   //chartA.addSeries(data[0].city, data[0].avgs);
-		   //chartA.addSeries(data[1].city, data[1].avgs);
-		   //chartA.addSeries(data[2].city, data[2].avgs);
 		   Array.forEach(data, function(d){
 				console.log(d.city);
 				console.log(d.avgs);
