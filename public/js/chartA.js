@@ -31,12 +31,13 @@ require([
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA,"default");
 		   var legend = new Legend({ chart: chartA }, "legenda");
-		   Array.forEach(data, function(d, i){
-				chartA.addSeries(d.city, d.avgs);
-				if(data.length == i + 1){
-					chartA.render();
-				}
-		   });
+		   chartA.addSeries(data[0].city, data[0].avgs);
+		   //Array.forEach(data, function(d, i){
+		   //		chartA.addSeries(d.city, d.avgs);
+		   //if(data.length == i + 1){
+		   //	chartA.render();
+		   //}
+		   //});
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){
