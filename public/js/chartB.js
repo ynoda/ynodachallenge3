@@ -34,9 +34,9 @@ require([
 		    var noChild = [];
 		    Array.forEach(data, function(d){
 			    if(d.has_child == "Yes"){
-				hasChild.push({x: d.x, y: d.y});
+					hasChild.push({x: d.x, y: d.y});
 			    }else if(d.has_child == "No"){
-				noChild.push({x: d.x, y: d.y});
+					noChild.push({x: d.x, y: d.y});
 			    }
 		    });
 		    chartB.addSeries("House without Child", noChild, {stroke: {color: "red", width: 0.1}, fill: "orange"});

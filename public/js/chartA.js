@@ -28,19 +28,20 @@ require([
 			   fixLower: "major",
 			   fixUpper: "major"
 		   });
-		   var tip = new Tooltip(chartA, "default");
-		   var mag = new Magnify(chartA,"default");
-		   var legend = new Legend({ chart: chartA }, "legenda");
+
 		   //chartA.addSeries(data[0].city, data[0].avgs);
 		   //chartA.addSeries(data[1].city, data[1].avgs);
 		   //chartA.addSeries(data[2].city, data[2].avgs);
 		   var i;
-		   for(i = 0; i < data.length; i++){
-				chartA.addSeries(data[i].city, data[i].avgs);
-				if(i == data.length - 1){
-					chartA.render();
-				}
+		   Array.forEach(data, function(d){
+				console.log(d.city);
+				console.log(d.avgs);
+				chartA.addSeries(d.city, d.avgs);
 		   }
+		   var tip = new Tooltip(chartA, "default");
+		   var mag = new Magnify(chartA, "default");
+		   chartA.render();
+		   var legend = new Legend({ chart: chartA }, "legenda");
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){
