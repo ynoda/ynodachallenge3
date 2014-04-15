@@ -50,6 +50,6 @@ require([
 	    }, function(err){
 		    console.log(err);
 	    }, function(evt){
-		    console.log(evt);
+		    //console.log(evt);
 	    });
 });

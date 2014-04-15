@@ -32,12 +32,11 @@ require([
 		   //chartA.addSeries(data[0].city, data[0].avgs);
 		   //chartA.addSeries(data[1].city, data[1].avgs);
 		   //chartA.addSeries(data[2].city, data[2].avgs);
-		   var i;
 		   Array.forEach(data, function(d){
 				console.log(d.city);
 				console.log(d.avgs);
 				chartA.addSeries(d.city, d.avgs);
-		   }
+		   });
 		   var tip = new Tooltip(chartA, "default");
 		   var mag = new Magnify(chartA, "default");
 		   chartA.render();
