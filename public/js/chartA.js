@@ -37,8 +37,10 @@ require([
 		   var i;
 		   for(i = 0; i < data.length; i++){
 				chartA.addSeries(data[i].city, data[i].avgs);
+				if(i == data.length - 1){
+					chartA.render();
+				}
 		   }
-		   chartA.render();
 	   }, function(err){
                    console.log(err);
 	   }, function(evt){
