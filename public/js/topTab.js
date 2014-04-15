@@ -3,5 +3,6 @@ require([
 	"dijit/layout/ContentPane",
 	"dijit/layout/TabContainer",
 	"modules/chartA",
-	"modules/chartB"
+	"modules/chartB",
+	"dojo/domReady!"
 ]);
