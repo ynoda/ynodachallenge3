@@ -29,8 +29,6 @@ require([
 			   fixUpper: "major"
 		   });
 		   Array.forEach(data, function(d){
-				console.log(d.city);
-				console.log(d.avgs);
 				chartA.addSeries(d.city, d.avgs);
 		   });
 		   var tip = new Tooltip(chartA, "default");
